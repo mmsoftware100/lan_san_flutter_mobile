@@ -157,7 +157,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: _isLoading == true ? null : Colors.grey,
       appBar: AppBar(
         backgroundColor: Colors.orange,
-        title: Center(child: Text("စားမယ်/သောက်မယ်",style:TextStyle(fontSize:18))),
+        title: Center(child: Text("လန်းဆန်း",style:TextStyle(fontSize:18))),
       ),
       body:Provider.of<DataProvider>(context,listen: true).lDBcategories.length == 0 ? Padding(
         padding: const EdgeInsets.all(150),
