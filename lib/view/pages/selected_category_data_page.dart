@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import '../../model/data_model.dart';
 import '../../provider/data_provider.dart';
+import '../widgets/better_video_play_widget.dart';
 import '../widgets/my_oriantation_detail_view_widget.dart';
 import '../widgets/trending_item.dart';
 import 'detail_page.dart';
@@ -67,7 +68,9 @@ class _SelectedCategoryPageState extends State<SelectedCategoryPage> {
           return e.categoryId != widget.categoryID ? Container() : InkWell(
               child:  TrendingItem(img: e.imgUrl,title: e.title,description: e.description,rating: "5",cratedDate: e.createdDate,) ,
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailPage(localRecepie: e)));
+              // Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailPage(localRecepie: e)));
+
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> VideoPlayerPage()));
             },
           )  ;
         }).toList(),

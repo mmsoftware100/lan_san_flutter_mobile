@@ -60,6 +60,8 @@ dependencies:
 
   flutter_local_notifications: any
 
+  better_player: ^0.0.83
+  flutter_vlc_player: 7.1.2
 
   path: ^1.8.2
   sqflite: ^2.1.0
