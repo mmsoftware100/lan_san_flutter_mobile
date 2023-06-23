@@ -47,7 +47,8 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
 
 
 
-  CheckingWatchType() async {
+  /*
+ CheckingWatchType() async {
 
     BetterPlayerConfiguration _betterPlayerConfiguration =
     const BetterPlayerConfiguration(
@@ -102,6 +103,8 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
     _betterPlayerController.setupDataSource(_betterPlayerDataSource);
 
   }
+   */
+
   ///-------------------------------------------------------
 
 
@@ -130,7 +133,9 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
         // 'https://cdn.happylive.plus/file/happycdn/picture/M-Picture/2022/CM/Aug/17.8/TopGunMaverickhappyliveplus_Aug.txt'
         // 'http://185.132.176.54:8080/live/EnduhappylivePlus/EnduhappylivePlus/46.m3u8'
         // 'http://185.132.176.54:8080/live/EnduhappylivePlus/EnduhappylivePlus/10.m3u8'
-        'http://185.132.176.54:8080/live/EnduhappylivePlus/EnduhappylivePlus/42.m3u8'
+        // 'http://185.132.176.54:8080/live/EnduhappylivePlus/EnduhappylivePlus/42.m3u8'
+      'https://mrtv.gov.mm/sites/default/files/news-videos/LNs236238am1.mp4',
+
     );
     _betterPlayerController = BetterPlayerController(
         const BetterPlayerConfiguration(
@@ -172,54 +177,20 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
           ),
           title: Text("",style: TextStyle(color: Colors.black),),
         ),
-        body:  Column(
-          children: [
-            Container(
-              height: MediaQuery.of(context).size.height/3.3,
-              child: AspectRatio(
-                aspectRatio: 16 / 9,
-                child:BetterPlayer(controller: _betterPlayerController),//
-                // BetterPlayerPlaylist(
-                //     betterPlayerConfiguration: BetterPlayerConfiguration(),
-                //     betterPlayerPlaylistConfiguration:  BetterPlayerPlaylistConfiguration(),
-                //     betterPlayerDataSourceList: createDataSet()
-                // ),
-                //BetterPlayer(controller: _betterPlayerController),//
-              ),
-            ),
-            Container(
-              height: MediaQuery.of(context).size.height/1.7,
-              child:ListView(
-                physics: ScrollPhysics(),
-                shrinkWrap: true,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Column(
-                        children: [
-                          IconButton(onPressed: (){
-                            final platform = Theme.of(context).platform;
-                            // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MyHomePage(title: '',platform: platform,)));
-                          }, icon: Icon(Icons.add_box_sharp)),
-                          Text("Add to List")
-                        ],
-                      ),
+        body:Container(
+          height: MediaQuery.of(context).size.height/3.3,
+          child: AspectRatio(
+            aspectRatio: 16 / 9,
+            child:BetterPlayer(controller: _betterPlayerController),//
+            // BetterPlayerPlaylist(
+            //     betterPlayerConfiguration: BetterPlayerConfiguration(),
+            //     betterPlayerPlaylistConfiguration:  BetterPlayerPlaylistConfiguration(),
+            //     betterPlayerDataSourceList: createDataSet()
+            // ),
+            //BetterPlayer(controller: _betterPlayerController),//
+          ),
+        ),
 
-
-
-                    ],
-                  ),
-                  Divider(height: 15,),
-                  //     _permissionReady
-                  // ? _downladIcon()
-                  // : _buildNoPermissionWarning(),
-                ],
-              )
-
-            )
-          ],
-        )
     );
   }
 }
