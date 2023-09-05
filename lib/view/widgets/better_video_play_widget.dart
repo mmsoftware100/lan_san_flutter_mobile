@@ -20,12 +20,12 @@ class VideoPlayerPage extends StatefulWidget with WidgetsBindingObserver {
 
   // String movieName;
   // String imageUrl;
-  // String movieUrl;
+  String movieUrl;
 
   VideoPlayerPage(
       // this.movieName,
       // this.imageUrl,
-      // this.movieUrl
+      this.movieUrl
       );
 
   @override
@@ -109,17 +109,6 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
   @override
   void initState() {
 
@@ -135,6 +124,7 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
         // 'http://185.132.176.54:8080/live/EnduhappylivePlus/EnduhappylivePlus/10.m3u8'
         // 'http://185.132.176.54:8080/live/EnduhappylivePlus/EnduhappylivePlus/42.m3u8'
       'https://mrtv.gov.mm/sites/default/files/news-videos/LNs236238am1.mp4',
+      // widget.movieUrl
 
     );
     _betterPlayerController = BetterPlayerController(
@@ -142,7 +132,7 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
           autoPlay: true,
           fit: BoxFit.contain,
           controlsConfiguration: BetterPlayerControlsConfiguration(
-            enableOverflowMenu: false,
+            enableOverflowMenu: true,
             showControlsOnInitialize: false,
             enableRetry: true,
             showControls: true,
@@ -152,8 +142,6 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
         betterPlayerDataSource: betterPlayerDataSource
     );
     super.initState();
-
-
 
   }
 

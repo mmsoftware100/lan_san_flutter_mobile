@@ -70,7 +70,7 @@ class _SelectedCategoryPageState extends State<SelectedCategoryPage> {
             onTap: (){
               // Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailPage(localRecepie: e)));
 
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> VideoPlayerPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> VideoPlayerPage(e.imgUrl)));
             },
           )  ;
         }).toList(),
